@@ -1,0 +1,385 @@
+/* CSS for the side box containing the predicted sentiment and image */
+#Sentiment {
+    position: absolute;
+    bottom: -145%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color: rgba(35, 108, 225, 0.916);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: none;
+    margin-bottom: 25%;
+} 
+#Sentiment:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.side-box {
+    background-image: url(/static/images/AIImage2.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9986;
+    display: none; /* Hidden by default */
+    box-shadow: 0 0 20px #000508;
+    overflow: auto;
+    transition: all 0.3s ease; /* Optional for smooth transition */
+    /* background: linear-gradient(135deg, #fff 50%, #a2d9ee 50%); */
+}
+.side-box::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+    background-color: #f5f5f5; /* Background color of the scrollbar track */
+}
+.side-box-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 3px; /* Rounded corners for the thumb */
+}
+#sideBox.open {
+    overflow-y: hidden; /* Hide vertical scroll bar */
+}
+#sideBox h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#predictedSentiment {
+    margin-top: -20px;
+} 
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0); 
+    color: #1a237e;
+    width: 30px; /* Increased width */
+    height: 30px; /* Increased height */
+    font-size: 20px; /* Increased font size */
+    border: none;  
+    border-radius: 50%; /* Make it a circular button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+/* Styling for the chart containers */
+.chart-container {
+    width: 18%;
+    height: auto;
+    position: absolute;
+    left: 25%;
+    margin-bottom: 50px;
+    top: 25%;
+}
+.chart-container1 {
+    width: 35%;
+    height: auto;
+    margin-bottom: 20px;
+    position: absolute;
+    right: 15%;
+    top: 24%;
+}
+.chart-container2 {
+    width: 35%;
+    height: auto;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 35%;
+    bottom: 0%;
+}
+.chart-container3 {
+    overflow: auto;
+    max-height: 20%;
+    border: 0px solid #ccc;
+    width: 96%;
+
+}
+.chart-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+.chart-container3::-webkit-scrollbar {
+    width: 2px; /* Width of the scrollbar */
+    background-color: #f5f5f5; /* Background color of the scrollbar track */
+}
+.chart-container3::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 3px; /* Rounded corners for the thumb */
+}
+#sideBoxText {
+    padding: 10px;
+}
+/* Styling for the chart canvas */
+#sentimentChartPie,#sentimentChartBar,#sentimentChartLine{
+    width: 100% !important;
+    height: auto !important;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.container-secondery{ 
+    background-image: url(/static/images/AIImage2.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 8.9vh;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif
+}
+.heading{
+    color: black;
+    font-size: 30px;
+    margin-bottom: 40%;
+    position: absolute;
+} 
+#box1, #box2, #box3 {
+    flex: 1 1 calc(25% - 10px);
+    min-width: 150px;
+    height: 250px;
+    background-color: white;
+    color: white; 
+    border: 0px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+    margin-bottom: 15%;
+    padding: 10px; 
+    overflow: hidden; 
+    text-align: center;  
+    line-height: 1.5; 
+}
+#chartPie,#chartBar, #chartLine {
+    width: 100%;
+    height: 100%;  
+  }
+
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .heading {
+        font-size: 35px;
+        margin-bottom: 55%;
+    }
+    .side-box {
+        padding: 5px;
+    }
+    #box1, #box2, #box3 {
+        margin: 30px;
+        height: 220px;
+    }
+    #Sentiment {
+        font-size: 15px;
+        padding: 9px 35px;
+        margin-bottom: 60%;
+    }
+    .side-box {
+        padding: 8px;
+        box-shadow: 0 0 15px #000508;
+    }
+    #sentimentChartPie {
+        padding: 8px;
+        border-radius: 7px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartBar {
+        padding: 8px;
+        border-radius: 7px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartLine {
+        padding: 8px;
+        border-radius: 7px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 992px) {
+    .container-secondery {
+        margin-top: 7vh;
+        height: 65vh;
+    }
+    .heading {
+        font-size: 30px;
+        margin-bottom: 70%;
+    }
+    #Sentiment {
+        font-size: 14px;
+        padding: 8px 30px;
+        margin-bottom: 85%;
+    }
+    .side-box {
+        padding: 6px;
+        box-shadow: 0 0 10px #000508;
+    }
+    #sentimentChartPie {
+        padding: 6px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartBar {
+        padding: 6px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartLine {
+        padding: 6px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .container-secondery {
+        margin-top: 7vh;
+        height: 65vh;
+    }
+    .heading {
+        font-size: 30px;
+        margin-bottom: 60%
+    }
+    #box1, #box2, #box3 {
+        margin: 20px;
+        height: 200px;
+    }
+    #Sentiment {
+        font-size: 13px;
+        padding: 7px 25px;
+        margin-bottom: 100%;
+    }
+    .side-box {
+        padding: 5px;
+        box-shadow: 0 0 8px #000508;
+    }
+    #sentimentChartPie {
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartBar {
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartLine {
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 576px) {
+    .container-secondery {
+        margin-top: 5vh;
+        height: 55vh;
+    }
+    #box1, #box2, #box3 {
+        display: inline-block;
+        vertical-align: top;
+        white-space: normal;
+        margin: 5px;
+        height: 180px;
+        
+    }
+    .heading {
+        font-size: 30px;
+        margin-bottom: 90%;
+    }
+    #Sentiment {
+        font-size: 12px;
+        padding: 6px 20px;
+        margin-bottom: 5%;
+        bottom: -80%; /* Adjust bottom position for smaller screens */
+    }
+    .side-box {
+        padding: 4px;
+        box-shadow: 0 0 5px #000508;
+        width: 100vw; /* Ensure it always takes the full width */
+        height: 100vh; /* Ensure it always takes the full height */
+    }
+    #sentimentChartPie {
+        padding: 4px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartBar {
+        padding: 4px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    #sentimentChartLine {
+        padding: 4px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .chart-container, .chart-container1, .chart-container2 {
+        padding: 8px;
+        border-radius: 7px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 992px) {
+    .chart-container, .chart-container1, .chart-container2 {
+        padding: 6px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .chart-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container, .chart-container1, .chart-container2 {
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 576px) {
+    .chart-container, .chart-container1, .chart-container2 {
+        padding: 4px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        margin: 5px;
+    }
+}
+  
